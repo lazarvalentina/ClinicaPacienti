@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.clinicafx.HelloController">
+
+
+    <TableView fx:id="pacientTable" layoutX="20.0" layoutY="50.0" prefHeight="200.0" prefWidth="400.0">
+        <columns>
+            <TableColumn fx:id="numeColumn" prefWidth="150.0" text="Nume"/>
+            <TableColumn fx:id="prenumeColumn" prefWidth="150.0" text="Prenume"/>
+            <TableColumn fx:id="varstaColumn" prefWidth="100.0" text="Vârsta"/>
+        </columns>
+    </TableView>
+
+    <TableView fx:id="programareTable" layoutX="20.0" layoutY="300.0" prefHeight="200.0" prefWidth="400.0">
+        <columns>
+            <TableColumn fx:id="dataColumn" prefWidth="150.0" text="Data"/>
+            <TableColumn fx:id="scopColumn" prefWidth="250.0" text="Scop"/>
+        </columns>
+    </TableView>
+
+    <TextField fx:id="numeField" layoutX="450.0" layoutY="50.0" promptText="Nume"/>
+    <TextField fx:id="prenumeField" layoutX="450.0" layoutY="90.0" promptText="Prenume"/>
+    <TextField fx:id="varstaField" layoutX="450.0" layoutY="130.0" promptText="Vârsta"/>
+
+    <TextField fx:id="dataField" layoutX="450.0" layoutY="200.0" promptText="Data (YYYY-MM-DD)"/>
+    <TextField fx:id="scopField" layoutX="450.0" layoutY="240.0" promptText="Scop Programare"/>
+    <TextField fx:id="pacientIdField" layoutX="450.0" layoutY="280.0" promptText="ID Pacient"/>
+
+
+    <Button layoutX="600.0" layoutY="50.0" text="Adaugă Pacient" onAction="#adaugaPacient"/>
+    <Button layoutX="600.0" layoutY="90.0" text="Șterge Pacient" onAction="#stergePacient"/>
+    <Button layoutX="600.0" layoutY="130.0" text="Modifică Pacient" onAction="#modificaPacient"/>
+
+    <Button layoutX="600.0" layoutY="200.0" text="Adaugă Programare" onAction="#adaugaProgramare"/>
+    <Button layoutX="600.0" layoutY="240.0" text="Șterge Programare" onAction="#stergeProgramare"/>
+    <Button layoutX="600.0" layoutY="280.0" text="Modifică Programare" onAction="#modificaProgramare"/>
+
+
+    <Button layoutX="450.0" layoutY="400.0" text="Nr programări/pacient" onAction="#raportProgPerPacient"/>
+    <Button layoutX="600.0" layoutY="400.0" text="Nr programări/lună" onAction="#raportProgPeLuna"/>
+    <Button layoutX="450.0" layoutY="430.0" text="Zile de la ultima programare" onAction="#raportZileDeLaUltima"/>
+
+
+    <ListView fx:id="listView" layoutX="450.0" layoutY="470.0" prefHeight="200.0" prefWidth="400.0"/>
+</AnchorPane>
